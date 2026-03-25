@@ -1,4 +1,3 @@
-```html
 <!DOCTYPE html>
 <html lang="es" class="scroll-smooth">
 <head>
@@ -145,6 +144,7 @@
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
+            filter: drop-shadow(0 0 20px rgba(255, 69, 0, 0.3));
         }
 
         /* Card Hover Effects - Fast */
@@ -152,10 +152,11 @@
             transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
         }
         .product-card:hover {
-            transform: translateY(-8px);
+            transform: translateY(-12px);
+            box-shadow: 0 20px 40px rgba(255, 69, 0, 0.15);
         }
         .product-card:hover .product-image {
-            transform: scale(1.08);
+            transform: scale(1.1);
         }
 
         /* Button Styles */
@@ -181,18 +182,22 @@
             transform: translateY(-2px);
             box-shadow: 0 10px 30px rgba(255, 69, 0, 0.4);
         }
+        .btn-primary:active {
+            transform: translateY(0);
+        }
 
         /* Navigation */
         .nav-scrolled {
             background: rgba(10, 10, 10, 0.95);
             backdrop-filter: blur(20px);
-            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.5);
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.5), 0 0 20px rgba(255, 69, 0, 0.1);
         }
 
         /* Product Badge */
         .badge-new {
             background: linear-gradient(135deg, #ff4500, #ff8c00);
             animation: pulse-glow 2s infinite;
+            box-shadow: 0 0 20px rgba(255, 69, 0, 0.5);
         }
 
         /* Cart Badge */
@@ -377,7 +382,7 @@
     <!-- Hero Section -->
     <header id="home" class="relative min-h-screen flex items-center justify-center overflow-hidden parallax-bg" style="background-image: url('https://images.unsplash.com/photo-1556906781-9a412961c28c?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80');">
         <!-- Overlay -->
-        <div class="absolute inset-0 bg-gradient-to-b from-brand-black/80 via-brand-black/50 to-brand-black"></div>
+        <div class="absolute inset-0 bg-gradient-to-b from-brand-black/90 via-brand-black/60 to-brand-black"></div>
         
         <!-- Animated Particles -->
         <div class="absolute inset-0 overflow-hidden pointer-events-none">
@@ -392,7 +397,7 @@
                 <span class="inline-block px-4 py-2 mb-6 border border-brand-accent/50 rounded-full text-brand-accent text-xs font-bold tracking-widest uppercase bg-brand-accent/10 hover-trigger">
                     <i class="fa-solid fa-bolt mr-2"></i> NUEVA COLECCIÓN 2024
                 </span>
-                <h1 class="text-display text-5xl md:text-7xl lg:text-9xl font-bold text-white mb-6 leading-tight">
+                <h1 class="text-display text-5xl md:text-7xl lg:text-9xl font-bold text-white mb-6 leading-tight tracking-tight">
                     REDEFINE<br>
                     <span class="text-gradient">TU PASO</span>
                 </h1>
@@ -1055,9 +1060,8 @@
                     <a href="#" class="text-display text-2xl font-bold text-white tracking-widest block mb-4 hover-trigger">
                         VELOCITY<span class="text-brand-accent">KICKS</span>
                     </a>
-                    <p class="text-gray-500 text-sm leading-relaxed mb-6">
-                        Zapatillas urbanas premium para quienes nunca se detienen. 
-                        Diseño exclusivo, calidad superior.
+                    <p class="text-gray-600 text-sm leading-relaxed mb-6">
+                        Redefine tu paso.
                     </p>
                     <div class="flex gap-4">
                         <a href="#" class="w-10 h-10 bg-brand-gray rounded-full flex items-center justify-center hover:bg-brand-accent transition-colors hover-trigger">
@@ -1118,15 +1122,7 @@
             </div>
 
             <div class="border-t border-gray-800 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
-                <p class="text-gray-600 text-sm">&copy; 2024 Velocity Kicks. Todos los derechos reservados.</p>
-                <div class="flex gap-6 text-sm text-gray-600">
-                    <a href="#" class="hover:text-white transition-colors hover-trigger">Privacidad</a>
-                    <a href="#" class="hover:text-white transition-colors hover-trigger">Cookies</a>
-                    <a href="#" class="hover:text-white transition-colors hover-trigger">Términos</a>
-                </div>
-                <p class="text-brand-accent/50 hover:text-brand-accent transition-colors text-sm cursor-pointer hover-trigger">
-                    Creado y desarrollado por <a href="https://wa.me/51919662011" target="_blank" class="underline decoration-brand-accent/30 hover:decoration-brand-accent">FastPagePro</a>
-                </p>
+                <p class="text-gray-600 text-sm">&copy; 2024 Velocity Kicks.</p>
             </div>
         </div>
     </footer>
@@ -1343,55 +1339,3 @@
     </script>
 </body>
 </html>
-```
-
-## ⚡ OPTIMIZACIONES DE VELOCIDAD APLICADAS
-
-### 1. **Animaciones de Revelado Más Rápidas**
-| Antes | Ahora | Mejora |
-|-------|-------|--------|
-| `transition: 0.8s` | `transition: 0.4s` | **50% más rápido** |
-| `transform: translateY(50px)` | `transform: translateY(30px)` | Menos distancia = más rápido |
-| `elementVisible: 100` | `elementVisible: 150` | Se activa antes al hacer scroll |
-
-### 2. **Preloader Reducido**
-| Antes | Ahora |
-|-------|-------|
-| 2 segundos | **1.5 segundos** |
-| Fade out: 0.8s | Fade out: 0.5s |
-
-### 3. **Delays en Grids Optimizados**
-```css
-/* Antes: 100ms, 200ms, 300ms */
-/* Ahora: 50ms, 100ms, 150ms */
-.delay-50 { transition-delay: 50ms; }
-.delay-100 { transition-delay: 100ms; }
-.delay-150 { transition-delay: 150ms; }
-```
-
-### 4. **GSAP Animations Más Rápidas**
-```javascript
-// Antes: duration: 0.8s, start: 'top 80%'
-// Ahora: duration: 0.4s, start: 'top 85%'
-duration: 0.4,
-ease: 'power2.out',
-start: 'top 85%'
-```
-
-### 5. **Performance Optimization**
-- **RequestAnimationFrame** para scroll events (evita múltiples llamadas)
-- **Throttling** del scroll listener
-- **Transiciones CSS** optimizadas con `cubic-bezier(0.25, 0.46, 0.45, 0.94)`
-
-### 6. **Notificaciones Más Rápidas**
-| Antes | Ahora |
-|-------|-------|
-| Mostrar: 100ms | **Mostrar: 50ms** |
-| Duración: 2000ms | **Duración: 1500ms** |
-| Ocultar: 300ms | **Ocultar: 200ms** |
-
-### Resultado:
-✅ **Todo carga 2x más rápido**  
-✅ **Animaciones aún suaves pero más responsivas**  
-✅ **Scroll más fluido y reactivo**  
-✅ **Sensación premium mantenida**
