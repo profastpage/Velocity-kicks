@@ -1,1 +1,0 @@
-﻿c=open(r"c:/dev/PROYECTOS ONLINE/DEMOS/VELOCITY KICKS/index.html","r", encoding="utf-8").read()
