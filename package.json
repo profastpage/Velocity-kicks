@@ -1,0 +1,9 @@
+{
+  "name": "velocity-kicks",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "deploy": "wrangler pages deploy . --project-name=velocity-kicks --branch=main",
+    "build": "echo 'Static site - no build required'"
+  }
+}

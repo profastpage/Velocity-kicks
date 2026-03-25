@@ -1,0 +1,10 @@
+# Cloudflare Pages configuration
+# This is a static HTML site - no build process needed
+
+# Build settings
+build_command = "echo 'Static site - no build required'"
+publish_dir = "."
+
+# Environment variables (add your API keys here if needed)
+# [vars]
+# MY_VAR = "my-value"
